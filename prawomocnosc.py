@@ -12,7 +12,7 @@ def data_prawomocnosci(data_doreczenia, typ_orzeczenia):
       okres_prawomocnosci = 14
   else:
       raise ValueError('Nieznany typ orzeczenia')
-  data_prawomocnosci = data_doreczenia + datetime.timedelta(days=okres_prawomocnosci)
+  data_prawomocnosci = data_doreczenia + datetime.timedelta(days=okres_prawomocnosci +1)
 
   # pobranie listy dat świątecznych w Polsce
   polskie_swieto = holidays.Polish()
