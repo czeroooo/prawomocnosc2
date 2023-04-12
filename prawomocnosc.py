@@ -2,7 +2,7 @@ import datetime
 import holidays
 import streamlit as st
 
-def data_prawomocnosci(dzien_doreczenia, miesiac_doreczenia, rok_doreczenia, typ_orzeczenia):
+def data_prawomocnosci(data_doreczenia, typ_orzeczenia):
   data_doreczenia = datetime.date(rok_doreczenia, miesiac_doreczenia, dzien_doreczenia)
   if typ_orzeczenia == 'wyrok':
       okres_prawomocnosci = 30
@@ -28,11 +28,9 @@ def data_prawomocnosci(dzien_doreczenia, miesiac_doreczenia, rok_doreczenia, typ
 
 st.title("Obliczanie daty prawomocności orzeczenia")
 
-dzien_doreczenia = st.number_input("Podaj dzień doręczenia", value=1, min_value=1, max_value=31)
-miesiac_doreczenia = st.number_input("Podaj miesiąc doręczenia", value=1, min_value=1, max_value=12)
-rok_doreczenia = st.number_input("Podaj rok doręczenia", value=2022, min_value=1900, max_value=2100)
+data_doreczenia = st.date_input("Podaj datę doręczenia", value=datetime.date(2023, 1, 1), min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100,12,31)
 typ_orzeczenia = st.selectbox("Typ orzeczenia", ["wyrok", "postanowienie", "decyzja"])
 
-data_prawomocnosci = data_prawomocnosci(dzien_doreczenia, miesiac_doreczenia, rok_doreczenia, typ_orzeczenia)
+data_prawomocnosci = data_prawomocnosci(data_doreczenia, typ_orzeczenia)
 
 st.write("Data prawomocności orzeczenia: ", data_prawomocnosci)
