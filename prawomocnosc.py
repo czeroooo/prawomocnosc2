@@ -32,7 +32,7 @@ dzien_doreczenia = st.number_input("Podaj dzień doręczenia", value=1, min_valu
 miesiac_doreczenia = st.number_input("Podaj miesiąc doręczenia", value=1, min_value=1, max_value=12)
 rok_doreczenia = st.number_input("Podaj rok doręczenia", value=2022, min_value=1900, max_value=2100)
 
-typ_orzeczenia = st.selectbox("Typ orzeczenia", ["wyrok", "postanowienie"])
+typ_orzeczenia = st.selectbox("Typ orzeczenia", ["wyrok", "postanowienie", "decyzja"])
 
 data_prawomocnosci = data_prawomocnosci(dzien_doreczenia, miesiac_doreczenia, rok_doreczenia, typ_orzeczenia)
 
