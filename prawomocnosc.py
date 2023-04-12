@@ -8,6 +8,8 @@ def data_prawomocnosci(dzien_doreczenia, miesiac_doreczenia, rok_doreczenia, typ
       okres_prawomocnosci = 30
   elif typ_orzeczenia == 'postanowienie':
       okres_prawomocnosci = 7
+  elif typ_orzeczenia == 'decyzja'
+      okres_prawomocnosci = 14
   else:
       raise ValueError('Nieznany typ orzeczenia')
   data_prawomocnosci = data_doreczenia + datetime.timedelta(days=okres_prawomocnosci)
