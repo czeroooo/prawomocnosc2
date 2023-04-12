@@ -23,12 +23,10 @@ def data_prawomocnosci(data_doreczenia, typ_orzeczenia):
           data_prawomocnosci += datetime.timedelta(days=1)
       else:
           break
-
   return data_prawomocnosci
 
 st.title("Obliczanie daty prawomocności orzeczenia")
-
-data_doreczenia = st.date_input("Podaj datę doręczenia", value=datetime.date(2023, 1, 1), min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100,12,31)
+data_doreczenia = st.date_input("Podaj datę doręczenia", value=datetime.date(2023, 1, 1), min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100,12,31))
 typ_orzeczenia = st.selectbox("typ orzeczenia", ["wyrok", "postanowienie", "decyzja"])
 
 data_prawomocnosci = data_prawomocnosci(data_doreczenia, typ_orzeczenia)
