@@ -3,7 +3,7 @@ import holidays
 import streamlit as st
 
 def data_prawomocnosci(data_doreczenia, typ_orzeczenia):
-  data_doreczenia = datetime.date()
+  data_doreczenia = datetime.date(rok_doręczenia, miesiac_doręczenia, dzien_doreczenia)
   if typ_orzeczenia == 'wyrok':
       okres_prawomocnosci = 30
   elif typ_orzeczenia == 'postanowienie':
