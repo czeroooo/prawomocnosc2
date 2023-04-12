@@ -8,7 +8,11 @@ def data_prawomocnosci(data_doreczenia, typ_orzeczenia):
       okres_prawomocnosci = 30
   elif typ_orzeczenia == 'postanowienie':
       okres_prawomocnosci = 7
-  elif typ_orzeczenia == 'decyzja':
+  elif typ_orzeczenia == 'decyzja II instancji':
+      okres_prawomocnosci = 30:
+  elif typ_orzeczenia == 'decyzja II instancji - art. 138 § 2':
+      okres_prawomocnosci = 14
+  elif typ_orzeczenia == 'decyzja I instancji':
       okres_prawomocnosci = 14
   else:
       raise ValueError('Nieznany typ orzeczenia')
@@ -27,7 +31,7 @@ def data_prawomocnosci(data_doreczenia, typ_orzeczenia):
 
 st.title("Obliczanie daty prawomocności orzeczenia")
 data_doreczenia = st.date_input("Podaj datę doręczenia", value=datetime.date(2023, 1, 1), min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100,12,31))
-typ_orzeczenia = st.selectbox("Typ orzeczenia", ["wyrok", "postanowienie", "decyzja"])
+typ_orzeczenia = st.selectbox("Typ orzeczenia", ["wyrok", "postanowienie", "decyzja II instancji", "decyzja II instancji - art. 138 § 2", "decyzja I instancji"])
 
 data_prawomocnosci = data_prawomocnosci(data_doreczenia, typ_orzeczenia)
 
