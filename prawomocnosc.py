@@ -35,3 +35,5 @@ data_doreczenia = st.date_input("Podaj datę doręczenia", value=datetime.date(2
 data_prawomocnosci = data_prawomocnosci(data_doreczenia, typ_orzeczenia)
 
 st.write("Data prawomocności orzeczenia: ", data_prawomocnosci)
+
+st.footer("Zaprojektował Michał Czerniak")
