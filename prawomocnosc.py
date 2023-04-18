@@ -36,4 +36,4 @@ data_prawomocnosci = data_prawomocnosci(data_doreczenia, typ_orzeczenia)
 
 st.write("Data prawomocności orzeczenia: ", data_prawomocnosci)
 
-st.footer("Zaprojektował Michał Czerniak")
+st.write("Zaprojektował Michał Czerniak")
