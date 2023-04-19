@@ -8,11 +8,11 @@ def data_prawomocnosci(data_doreczenia, typ_orzeczenia):
       okres_prawomocnosci = 30
   elif typ_orzeczenia == 'postanowienie':
       okres_prawomocnosci = 7
-  elif typ_orzeczenia == 'decyzja organu II instancji':
+  elif typ_orzeczenia == 'decyzja II instancji':
       okres_prawomocnosci = 30
-  elif typ_orzeczenia == 'decyzja organu II instancji - art. 138 § 2':
+  elif typ_orzeczenia == 'decyzja II instancji - art. 138 § 2':
       okres_prawomocnosci = 14
-  elif typ_orzeczenia == 'decyzja organu I instancji':
+  elif typ_orzeczenia == 'decyzja I instancji':
       okres_prawomocnosci = 14
   else:
       raise ValueError('Nieznany typ orzeczenia')
