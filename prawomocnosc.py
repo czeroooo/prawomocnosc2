@@ -30,9 +30,9 @@ def data_prawomocnosci(data_doreczenia, typ_orzeczenia):
   return data_prawomocnosci
 
 st.title("Obliczanie prawomocności orzeczeń")
-st.info('Zaprojektował: Michał Czerniak')
 typ_orzeczenia = st.selectbox("Typ orzeczenia", ["wyrok", "postanowienie", "decyzja II instancji", "decyzja II instancji - art. 138 § 2", "decyzja I instancji"])
 data_doreczenia = st.date_input("Podaj datę doręczenia", value=datetime.date(2023, 1, 1), min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100,12,31))
 data_prawomocnosci = data_prawomocnosci(data_doreczenia, typ_orzeczenia)
 
 st.write("Data prawomocności orzeczenia: ", data_prawomocnosci)
+st.caption('Zaprojektował: Michał Czerniak')
