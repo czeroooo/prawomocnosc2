@@ -1,3 +1,5 @@
+import locale
+locale.setlocale(locale.LC_TIME, 'pl_PL.UTF-8')
 import datetime
 import holidays
 import streamlit as st
