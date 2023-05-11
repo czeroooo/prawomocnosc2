@@ -34,6 +34,6 @@ typ_orzeczenia = st.selectbox("Typ orzeczenia", ["wyrok", "postanowienie", "decy
 data_doreczenia = st.date_input("Podaj datę doręczenia", value=datetime.date(2023, 1, 1), min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100,12,31))
 data_prawomocnosci = data_prawomocnosci(data_doreczenia, typ_orzeczenia)
 
-st.markdown(f"<span style='font-size: 20px; color: white;'>Data prawomocności orzeczenia: </span><span style='font-size: 25px; color: green;'>{data_prawomocnosci}</span>", unsafe_allow_html=True)
+st.markdown(f"<span style='font-size: 20px; color: white;'>Data prawomocności orzeczenia: </span><span style='font-size: 30px; color: green;'>{data_prawomocnosci}</span>", unsafe_allow_html=True)
 
 st.caption('Zaprojektował: Michał Czerniak - WSA Poznań')
