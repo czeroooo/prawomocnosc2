@@ -1,8 +1,10 @@
-import locale
-locale.setlocale(locale.LC_TIME, 'pl_PL.UTF-8')
 import datetime
+from babel.dates import format_date
+import locale
 import holidays
 import streamlit as st
+
+locale.setlocale(locale.LC_TIME, 'pl_PL.UTF-8')
 
 def data_prawomocnosci(data_doreczenia, typ_orzeczenia):
   data_doreczenia = datetime.date(data_doreczenia.year, data_doreczenia.month, data_doreczenia.day)
