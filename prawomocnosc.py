@@ -14,6 +14,8 @@ def data_prawomocnosci(data_doreczenia, typ_orzeczenia):
       okres_prawomocnosci = 14
   elif typ_orzeczenia == 'decyzja I instancji':
       okres_prawomocnosci = 14
+  elif typ_orzeczenia == 'wyrok NSA':
+      okres_prawomocnosci = 0
   else:
       raise ValueError('Nieznany typ orzeczenia')
   data_prawomocnosci = data_doreczenia + datetime.timedelta(days=okres_prawomocnosci +1)
@@ -37,4 +39,5 @@ data_prawomocnosci = data_prawomocnosci(data_doreczenia, typ_orzeczenia)
 st.markdown(f"<span style='font-size: 20px; color: white;'>Data prawomocności orzeczenia: </span><span style='font-size: 30px; color: green;'>{data_prawomocnosci}</span>", unsafe_allow_html=True)
 
 st.caption('Zaprojektował: Michał Czerniak - WSA Poznań')
+
 
