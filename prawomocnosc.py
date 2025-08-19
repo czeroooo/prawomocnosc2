@@ -34,12 +34,13 @@ def data_prawomocnosci(data_doreczenia, typ_orzeczenia):
 st.title("Obliczanie prawomocności orzeczeń")
 typ_orzeczenia = st.selectbox("Typ orzeczenia", ["wyrok", "postanowienie", "decyzja II instancji", "decyzja II instancji - art. 138 § 2", "decyzja I instancji", "wyrok NSA"])
 data_doreczenia = st.date_input("Podaj datę doręczenia", value=datetime.date(2024, 1, 1), min_value=datetime.date(1900, 1, 1), max_value=datetime.date(2100,12,31))
-print("Orzeczenie prawomocne od:)
+print("Orzeczenie prawomocne od:data_prawomocnosci)
 data_prawomocnosci = data_prawomocnosci(data_doreczenia, typ_orzeczenia)
 
 st.markdown(f"<span style='font-size: 20px; color: white;'>Data prawomocności orzeczenia: </span><span style='font-size: 30px; color: green;'>{data_prawomocnosci}</span>", unsafe_allow_html=True)
 
 st.caption('Zaprojektował: Michał Czerniak - WSA Poznań')
+
 
 
 
