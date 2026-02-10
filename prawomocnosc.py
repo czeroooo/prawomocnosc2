@@ -39,7 +39,8 @@ data_prawomocnosci = data_prawomocnosci(data_doreczenia, typ_orzeczenia)
 
 st.markdown(f"<span style='font-size: 20px; color: white;'>Data prawomocności orzeczenia: </span><span style='font-size: 30px; color: green;'>{data_prawomocnosci}</span>", unsafe_allow_html=True)
 
-st.caption('Zaprojektował: Michał Czerniak - WSA Poznań')
+st.caption('Zaprojektował: Michał Czerniak - Wojewódzki Sąd Administracyjny w Poznaniu')
+
 
 
 
