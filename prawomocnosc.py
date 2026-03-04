@@ -24,12 +24,19 @@ def data_prawomocnosci(data_doreczenia, typ_orzeczenia):
   polskie_swieto = holidays.Polish()
 
   while True:
-      # sprawdzenie, czy data prawomocności przypada na dzień świąteczny lub dzień wolny od pracy
-      if data_prawomocnosci.weekday() >= 5 or data_prawomocnosci in polskie_swieto:
-          data_prawomocnosci += datetime.timedelta(days=1)
-      else:
-          break
-  return data_prawomocnosci
+    # 1. wyliczamy ostatni dzień terminu (nie wliczamy dnia doręczenia)
+ostatni_dzien = data_doreczenia + datetime.timedelta(days=okres_prawomocnosci)
+
+polskie_swieto = holidays.Polish()
+
+# 2. jeżeli ostatni dzień wypada w dzień wolny → przesuwamy na roboczy
+while ostatni_dzien.weekday() >= 5 or ostatni_dzien in polskie_swieto:
+    ostatni_dzien += datetime.timedelta(days=1)
+
+# 3. prawomocność dzień po upływie terminu
+data_prawomocnosci = ostatni_dzien + datetime.timedelta(days=1)
+
+return data_prawomocnosci
 
 st.title("Obliczanie prawomocności orzeczeń")
 typ_orzeczenia = st.selectbox("Typ orzeczenia", ["wyrok", "postanowienie", "decyzja II instancji", "decyzja II instancji - art. 138 § 2", "decyzja I instancji", "wyrok NSA"])
@@ -40,6 +47,7 @@ data_prawomocnosci = data_prawomocnosci(data_doreczenia, typ_orzeczenia)
 st.markdown(f"<span style='font-size: 20px; color: white;'>Data prawomocności orzeczenia: </span><span style='font-size: 30px; color: green;'>{data_prawomocnosci}</span>", unsafe_allow_html=True)
 
 st.caption('Zaprojektował: Michał Czerniak - Wojewódzki Sąd Administracyjny w Poznaniu')
+
 
 
 
