@@ -23,7 +23,7 @@ def data_prawomocnosci(data_doreczenia, typ_orzeczenia):
   # pobranie listy dat świątecznych w Polsce
   polskie_swieto = holidays.Polish()
 
-  while True:
+while True:
 # 1. wyliczamy ostatni dzień terminu (nie wliczamy dnia doręczenia)
 ostatni_dzien = data_doreczenia + datetime.timedelta(days=okres_prawomocnosci)
 
@@ -47,6 +47,7 @@ data_prawomocnosci = data_prawomocnosci(data_doreczenia, typ_orzeczenia)
 st.markdown(f"<span style='font-size: 20px; color: white;'>Data prawomocności orzeczenia: </span><span style='font-size: 30px; color: green;'>{data_prawomocnosci}</span>", unsafe_allow_html=True)
 
 st.caption('Zaprojektował: Michał Czerniak - Wojewódzki Sąd Administracyjny w Poznaniu')
+
 
 
 
